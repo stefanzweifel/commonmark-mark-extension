@@ -1,16 +1,16 @@
 {
-    "name": "vendor_slug/package_slug",
-    "description": ":package_description",
+    "name": "wnx/commonmark-mark-extension",
+    "description": "This is my package CommonmarkMarkExtension",
     "keywords": [
-        ":vendor_name",
-        "package_slug"
+        "wnx",
+        "commonmark-mark-extension"
     ],
-    "homepage": "https://github.com/vendor_slug/package_slug",
+    "homepage": "https://github.com/wnx/commonmark-mark-extension",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Stefan Zweifel",
+            "email": "hello@stefanzweifel.io",
             "role": "Developer"
         }
     ],
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Wnx\\CommonmarkMarkExtension\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Wnx\\CommonmarkMarkExtension\\Tests\\": "tests"
         }
     },
     "scripts": {

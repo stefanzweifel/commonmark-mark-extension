@@ -1,7 +1,15 @@
 # Changelog
+All notable changes to this project will be documented in this file.
 
-All notable changes to `:package_name` will be documented in this file.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## 1.0.0 - 202X-XX-XX
+## [Unreleased](https://github.com/stefanzweifel/commonmark-mark-extension/compare/v1.0.1...HEAD)
 
-- initial release
+<!-- New Release notes will be placed here automatically -->
+
+## [v1.0.0](https://github.com/stefanzweifel/commonmark-mark-extension/releases/tag/v1.0.0) - 2021-xx-xx
+
+- Initial Release
+
+
