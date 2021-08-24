@@ -1,8 +1,8 @@
-# This is my package CommonmarkMarkExtension
+# Parse and Render ==marked text== league/commonmark
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/wnx/commonmark-mark-extension.svg?style=flat-square)](https://packagist.org/packages/wnx/commonmark-mark-extension)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/stefanzweifel/commonmark-mark-extension/run-tests?label=tests)](https://github.com/stefanzweifel/commonmark-mark-extension/actions?query=workflow%3ATests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/stefanzweifel/commonmark-mark-extension/Check%20&%20fix%20styling?label=code%20style)](https://github.com/stefanzweifel/commonmark-mark-extension/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/stefanzweifel/commonmark-mark-extension/run-tests?label=tests)](https://github.com/stefanzweifel/commonmark-mark-extension/actions?query=workflow%3ATests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/stefanzweifel/commonmark-mark-extension/Check%20&%20fix%20styling?label=code%20style)](https://github.com/stefanzweifel/commonmark-mark-extension/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/wnx/commonmark-mark-extension.svg?style=flat-square)](https://packagist.org/packages/wnx/commonmark-mark-extension)
 
 This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
