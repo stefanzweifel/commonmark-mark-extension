@@ -16,7 +16,7 @@ class MarkRenderer implements NodeRendererInterface
      *
      * @psalm-suppress MoreSpecificImplementedParamType
      */
-    public function render(Node $node, ChildNodeRendererInterface $childRenderer): string
+    public function render(Node $node, ChildNodeRendererInterface $childRenderer): HtmlElement
     {
         $attrs = $node->data->get('attributes');
 

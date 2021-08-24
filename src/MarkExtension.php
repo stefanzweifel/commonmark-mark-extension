@@ -3,16 +3,28 @@
 namespace Wnx\CommonmarkMarkExtension;
 
 use League\CommonMark\Environment\EnvironmentBuilderInterface;
-use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
-use League\CommonMark\Extension\ExtensionInterface;
+use League\CommonMark\Extension\ConfigurableExtensionInterface;
+use League\Config\ConfigurationBuilderInterface;
+use Nette\Schema\Expect;
+use Wnx\CommonmarkMarkExtension\DelimiterProcessor\MarkDelimiterProcessor;
+use Wnx\CommonmarkMarkExtension\Element\Mark;
 use Wnx\CommonmarkMarkExtension\Renderer\MarkRenderer;
 
-class MarkExtension implements ExtensionInterface
+class MarkExtension implements ConfigurableExtensionInterface
 {
     public function register(EnvironmentBuilderInterface $environment): void
     {
+        $char = $environment->getConfiguration()->get('mark/character');
+
         $environment
-            ->addInlineParser()
-            ->addRenderer(FencedCode::class, new MarkRenderer(), 10);
+            ->addDelimiterProcessor(new MarkDelimiterProcessor($char))
+            ->addRenderer(Mark::class, new MarkRenderer(), 10);
+    }
+
+    public function configureSchema(ConfigurationBuilderInterface $builder): void
+    {
+        $builder->addSchema('mark', Expect::structure([
+            'character' => Expect::string("="),
+        ]));
     }
 }
