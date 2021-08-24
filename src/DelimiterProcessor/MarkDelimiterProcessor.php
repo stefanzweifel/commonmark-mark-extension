@@ -7,17 +7,12 @@ namespace Wnx\CommonmarkMarkExtension\DelimiterProcessor;
 use League\CommonMark\Delimiter\DelimiterInterface;
 use League\CommonMark\Delimiter\Processor\DelimiterProcessorInterface;
 use League\CommonMark\Node\Inline\AbstractStringContainer;
-use League\Config\ConfigurationAwareInterface;
-use League\Config\ConfigurationInterface;
 use Wnx\CommonmarkMarkExtension\Element\Mark;
 
-class MarkDelimiterProcessor implements DelimiterProcessorInterface, ConfigurationAwareInterface
+class MarkDelimiterProcessor implements DelimiterProcessorInterface
 {
     /** @psalm-readonly */
     private string $char;
-
-    /** @psalm-readonly-allow-private-mutation */
-    private ConfigurationInterface $config;
 
     /**
      * @param string $char The mark character to use (typically '==' or '::')
@@ -63,10 +58,5 @@ class MarkDelimiterProcessor implements DelimiterProcessorInterface, Configurati
         }
 
         $opener->insertAfter($strikethrough);
-    }
-
-    public function setConfiguration(ConfigurationInterface $configuration): void
-    {
-        $this->config = $configuration;
     }
 }
