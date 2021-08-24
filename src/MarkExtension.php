@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Wnx\CommonmarkMarkExtension;
 
 use League\CommonMark\Environment\EnvironmentBuilderInterface;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Wnx\CommonmarkMarkExtension\Element;
 
 use League\CommonMark\Node\Inline\AbstractInline;

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Wnx\CommonmarkMarkExtension\Tests;
 
 use League\CommonMark\CommonMarkConverter;
-use Wnx\CommonmarkMarkExtension\MarkExtension;
 use PHPUnit\Framework\TestCase;
+use Wnx\CommonmarkMarkExtension\MarkExtension;
 
 class MarkExtensionTest extends TestCase
 {
@@ -12,8 +14,8 @@ class MarkExtensionTest extends TestCase
     {
         $converter = new CommonMarkConverter([
             'mark' => [
-                'character' => $character
-            ]
+                'character' => $character,
+            ],
         ]);
         $converter
             ->getEnvironment()
@@ -45,62 +47,62 @@ class MarkExtensionTest extends TestCase
             'simple_with_equal_signs' => [
                 'Hello ==World==',
                 '<p>Hello <mark>World</mark></p>',
-                '='
+                '=',
             ],
             'simple_with_colon' => [
                 'Hello ::World::',
                 '<p>Hello <mark>World</mark></p>',
-                ':'
+                ':',
             ],
             'three_equal_signs' => [
                 'Hello ===World===',
                 '<p>Hello ===World===</p>',
-                '='
+                '=',
             ],
             'three_and_two_equal_signs' => [
                 'Hello ===World==',
                 '<p>Hello ===World==</p>',
-                '='
+                '=',
             ],
             'two_and_three_equal_signs' => [
                 'Hello ==World===',
                 '<p>Hello ==World===</p>',
-                '='
+                '=',
             ],
             'three_colons' => [
                 'Hello :::World:::',
                 '<p>Hello :::World:::</p>',
-                ':'
+                ':',
             ],
             'three_and_two_colons' => [
                 'Hello :::World::',
                 '<p>Hello :::World::</p>',
-                ':'
+                ':',
             ],
             'two_and_three_colons' => [
                 'Hello ::World:::',
                 '<p>Hello ::World:::</p>',
-                ':'
+                ':',
             ],
             'mixed_characters_colon' => [
                 'Hello ::World==',
                 '<p>Hello ::World==</p>',
-                ':'
+                ':',
             ],
             'mixed_characters_equal_sign' => [
                 'Hello ::World==',
                 '<p>Hello ::World==</p>',
-                '='
+                '=',
             ],
             'single_equal_sign' => [
                 'Hello =World=',
                 '<p>Hello =World=</p>',
-                '='
+                '=',
             ],
             'single_colon' => [
                 'Hello :World:',
                 '<p>Hello :World:</p>',
-                ':'
+                ':',
             ],
         ];
     }

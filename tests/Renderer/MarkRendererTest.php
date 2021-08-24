@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Wnx\CommonmarkMarkExtension\Tests\Renderer;
 
 use League\CommonMark\Util\HtmlElement;
+use PHPUnit\Framework\TestCase;
 use Wnx\CommonmarkMarkExtension\Element\Mark;
 use Wnx\CommonmarkMarkExtension\Renderer\MarkRenderer;
-use PHPUnit\Framework\TestCase;
 use Wnx\CommonmarkMarkExtension\Tests\Support\FakeChildNodeRenderer;
 
 class MarkRendererTest extends TestCase
