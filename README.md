@@ -1,11 +1,24 @@
-# Parse and Render ==marked text== league/commonmark
+# Parse and Render ==marked text== with league/commonmark
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/wnx/commonmark-mark-extension.svg?style=flat-square)](https://packagist.org/packages/wnx/commonmark-mark-extension)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/stefanzweifel/commonmark-mark-extension/run-tests?label=tests)](https://github.com/stefanzweifel/commonmark-mark-extension/actions?query=workflow%3ATests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/stefanzweifel/commonmark-mark-extension/Check%20&%20fix%20styling?label=code%20style)](https://github.com/stefanzweifel/commonmark-mark-extension/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/wnx/commonmark-mark-extension.svg?style=flat-square)](https://packagist.org/packages/wnx/commonmark-mark-extension)
 
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
+
+A [league/commonmark](https://github.com/thephpleague/commonmark) extension to turn highlighted text into [`<mark>`-HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark) elements.
+
+For example, the following markdown text …
+
+```md
+The ==quick brown fox== jumps over the lazy dog.
+```
+
+… is turned into the following HTML.
+
+```html
+<p>The <mark>quick brown fox</mark> jumps over the lazy dog.</p>
+```
 
 ## Installation
 
@@ -17,9 +30,51 @@ composer require wnx/commonmark-mark-extension
 
 ## Usage
 
+Create a custom CommonMark environment, and register the `MarkExtension`.
+
 ```php
-$commonmark-mark-extension = new Wnx\CommonmarkMarkExtension();
-echo $commonmark-mark-extension->echoPhrase('Hello, Wnx!');
+use League\CommonMark\Environment\Environment;
+use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\MarkdownConverter;
+use Wnx\CommonmarkMarkExtension\MarkExtension;
+
+// Configure the Environment with all the CommonMark parsers/renderers
+$environment = new Environment();
+$environment->addExtension(new CommonMarkCoreExtension());
+
+// Add this extension
+$environment->addExtension(new MarkExtension());
+
+// Instantiate the converter engine and start converting some Markdown!
+$converter = new MarkdownConverter($environment);
+echo $converter->convertToHtml('The ==quick== brown fox jumps over the ==lazy dog==');
+```
+
+If you're using a different character than `=` to highlight text in Markdown, you can pass a `character` configuration to the extension.
+
+```php
+use League\CommonMark\Environment\Environment;
+use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\MarkdownConverter;
+use Wnx\CommonmarkMarkExtension\MarkExtension;
+
+// Define your configuration, if needed
+$config = [
+    'mark' => [
+        'character' => ':',
+    ],
+];
+
+// Configure the Environment with all the CommonMark parsers/renderers
+$environment = new Environment($config);
+$environment->addExtension(new CommonMarkCoreExtension());
+
+// Add this extension
+$environment->addExtension(new MarkExtension());
+
+// Instantiate the converter engine and start converting some Markdown!
+$converter = new MarkdownConverter($environment);
+echo $converter->convertToHtml('The ::quick:: brown fox jumps over the ::lazy dog::');
 ```
 
 ## Testing
