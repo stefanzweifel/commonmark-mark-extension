@@ -8,9 +8,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/stefanzweifel/commonmark-mark-extension/compare/v1.0.0....HEAD)
 
 <!-- New Release notes will be placed here automatically -->
-## [v1.0.0.](https://github.com/stefanzweifel/commonmark-mark-extension/compare/v1.0.0...v1.0.0.) - 2021-08-25
-
-Initial Release 🎉
 
 ## [v1.0.0](https://github.com/stefanzweifel/commonmark-mark-extension/releases/tag/v1.0.0) - 2021-08-25
 
