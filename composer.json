@@ -1,6 +1,6 @@
 {
     "name": "wnx/commonmark-mark-extension",
-    "description": "This is my package CommonmarkMarkExtension",
+    "description": "Render ==highlighted== texts as <mark> elements in league/commonmark",
     "keywords": [
         "wnx",
         "commonmark-mark-extension"
