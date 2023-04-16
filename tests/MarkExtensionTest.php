@@ -41,7 +41,7 @@ class MarkExtensionTest extends TestCase
         );
     }
 
-    public function getSourceAndExpectedOutputs(): array
+    public static function getSourceAndExpectedOutputs(): array
     {
         return [
             'simple_with_equal_signs' => [
