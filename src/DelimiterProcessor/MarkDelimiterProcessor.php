@@ -11,7 +11,6 @@ use Wnx\CommonmarkMarkExtension\Element\Mark;
 
 class MarkDelimiterProcessor implements DelimiterProcessorInterface
 {
-    /** @psalm-readonly */
     private string $char;
 
     /**

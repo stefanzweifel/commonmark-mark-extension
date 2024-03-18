@@ -15,8 +15,6 @@ class MarkRenderer implements NodeRendererInterface
      * @param Node $node
      *
      * {@inheritDoc}
-     *
-     * @psalm-suppress MoreSpecificImplementedParamType
      */
     public function render(Node $node, ChildNodeRendererInterface $childRenderer): HtmlElement
     {
