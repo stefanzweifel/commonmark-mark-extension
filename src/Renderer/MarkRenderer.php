@@ -18,6 +18,7 @@ class MarkRenderer implements NodeRendererInterface
      */
     public function render(Node $node, ChildNodeRendererInterface $childRenderer): HtmlElement
     {
+        /** @var array<string, string> $attrs */
         $attrs = $node->data->get('attributes');
 
         return new HtmlElement('mark', $attrs, $childRenderer->renderNodes($node->children()));
