@@ -12,7 +12,6 @@ use Wnx\CommonmarkMarkExtension\DelimiterProcessor\MarkDelimiterProcessor;
 use Wnx\CommonmarkMarkExtension\Element\Mark;
 use Wnx\CommonmarkMarkExtension\Renderer\MarkRenderer;
 
-/** @psalm-api */
 class MarkExtension implements ConfigurableExtensionInterface
 {
     public function register(EnvironmentBuilderInterface $environment): void
