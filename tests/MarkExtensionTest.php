@@ -10,7 +10,7 @@ use Wnx\CommonmarkMarkExtension\MarkExtension;
 
 class MarkExtensionTest extends TestCase
 {
-    public function getParser($character = '='): CommonMarkConverter
+    public function getParser(string $character = '='): CommonMarkConverter
     {
         $converter = new CommonMarkConverter([
             'mark' => [
@@ -41,6 +41,9 @@ class MarkExtensionTest extends TestCase
         );
     }
 
+    /**
+     * @return array<string, array<string>>
+     */
     public static function getSourceAndExpectedOutputs(): array
     {
         return [

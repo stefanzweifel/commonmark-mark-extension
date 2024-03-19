@@ -16,6 +16,7 @@ class MarkExtension implements ConfigurableExtensionInterface
 {
     public function register(EnvironmentBuilderInterface $environment): void
     {
+        /** @var string $char */
         $char = $environment->getConfiguration()->get('mark/character');
 
         $environment

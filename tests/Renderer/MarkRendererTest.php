@@ -20,7 +20,7 @@ class MarkRendererTest extends TestCase
     }
 
     /** @test */
-    public function it_renders_mark()
+    public function it_renders_mark(): void
     {
         $inline = new Mark();
         $inline->data->set('attributes/id', 'foo');
@@ -29,9 +29,10 @@ class MarkRendererTest extends TestCase
 
         $result = $this->renderer->render($inline, $fakeRenderer);
 
-        $this->assertTrue($result instanceof HtmlElement);
+        $this->assertInstanceOf(HtmlElement::class, $result);
         $this->assertEquals('mark', $result->getTagName());
-        $this->assertStringContainsString('::children::', $result->getContents(true));
         $this->assertEquals(['id' => 'foo'], $result->getAllAttributes());
+        /** @phpstan-ignore-next-line  */
+        $this->assertStringContainsString('::children::', $result->getContents(false));
     }
 }
